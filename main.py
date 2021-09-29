@@ -23,6 +23,9 @@ class App():
         self.keybinding()
         self.mouse.update()
         self.pitagoras.update()
+        for planet in planets: 
+            for planetPos in planets:
+                planet.detectOrbit(planetPos.pos, planetPos.orbitStrength)
         
     def draw(self):
         pyxel.cls(0)
