@@ -23,9 +23,14 @@ class App():
         self.keybinding()
         self.mouse.update()
         self.pitagoras.update()
-        for planet in planets: 
-            for planetPos in planets:
+        for i, planet in enumerate(planets): 
+            planet.planetIndexLink = []
+            for j, planetPos in enumerate(planets):
+                if(j==i): continue
                 planet.detectOrbit(planetPos.pos, planetPos.orbitStrength)
+                planet.planetIndexLink.append(j)
+            
+                
         
     def draw(self):
         pyxel.cls(0)
