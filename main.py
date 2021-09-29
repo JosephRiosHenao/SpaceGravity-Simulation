@@ -1,3 +1,4 @@
+from planet import Planet
 from pitagoras import Pitagoras
 import pyxel
 import mouse
@@ -27,10 +28,15 @@ class App():
         pyxel.cls(0)
         self.mouse.draw()
         self.pitagoras.draw()
+        for planet in planets: planet.draw()
         
     def keybinding(self):
         if (pyxel.btnp(pyxel.MOUSE_RIGHT_BUTTON)): 
             self.pitagoras.reset() 
             self.pitagoras.state = True
-        if (self.pitagoras.state and pyxel.btnp(pyxel.MOUSE_LEFT_BUTTON)): self.pitagoras.state = False
+        if (self.pitagoras.state and pyxel.btnp(pyxel.MOUSE_LEFT_BUTTON)): 
+            self.pitagoras.state = False
+            planets.append(Planet(self.pitagoras.CA(), self.pitagoras.H(), self.pitagoras.dot[0]))
+        if (pyxel.btnp(pyxel.KEY_SPACE)): print(self.pitagoras.H())
+
 App()
