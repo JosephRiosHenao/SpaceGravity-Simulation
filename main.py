@@ -24,11 +24,10 @@ class App():
         self.mouse.update()
         self.pitagoras.update()
         for i, planet in enumerate(planets): 
-            planet.planetIndexLink = []
+            planet.planetObjectLink = []
             for j, planetPos in enumerate(planets):
-                if(j==i): continue
-                planet.detectOrbit(planetPos.pos, planetPos.orbitStrength)
-                planet.planetIndexLink.append(j)
+                if(j!=i): planet.detectOrbit(planetPos)
+        
             
                 
         
