@@ -1,6 +1,5 @@
 import pyxel
 import time
-
 class App():
     def __init__(self):
         pyxel.init( 
@@ -26,5 +25,4 @@ class App():
     def draw(self):
         pyxel.cls(0)
         pyxel.circ(self.player["pos"][0],self.player["pos"][1],3,7)
-
 App()   
