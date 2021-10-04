@@ -6,12 +6,12 @@ class App():
             width      = 192,              
             height     = 128,              
             caption    = "ParabolicShot",   
-            fps        = 200,              
+            fps        = 60,              
             fullscreen = False,             
             scale      = 4)   
         self.player = {
             "pos" : [0,0],
-            "vel" : [85,0],
+            "vel" : [10,0],
             "a" : [0,9.8]
         }
         self.timeInit = time.time() 

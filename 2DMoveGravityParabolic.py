@@ -6,7 +6,7 @@ class App():
             width      = 192,              
             height     = 128,              
             caption    = "ParabolicShot",   
-            fps        = 200,              
+            fps        = 60,              
             fullscreen = False,             
             scale      = 4)   
         self.player = {
